@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР_6</title>
+    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo" class="animate__animated animate__delay-0.5s animate__bounceIn animate__faster">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main">
+            <div class="container">
+                <div class="main-content">
+                    <div class="main-text">
+                        <h1 class="main-title animate__animated animate__delay-1s animate__fadeInLeft animate__faster">Help Us <br> you will be able to create what</h1>
+                        <p class="main-highlight">you wish!</p>
+                        <p class="main-desc">Our capibilites + experience will allow you achieve great success. We believe in your first move this we at 100%, you cannot be stopped!</p>
+                        <a href="#" class="button">Learn more...</a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="rick-roll animate__animated animate__delay-1s animate__fadeIn animate__infinite">rick roll</a>
+                    </div>
+                    <div class="main-image">
+                        <img src="img/header-img.png" alt="Phone App">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="features-title">What do you need?</h2>
+                <div class="features-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="img/f3.png" alt="First block">
+                        </div>
+                        <h3 class="card-title">First block</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing eore</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="img/f4.png" alt="Second block">
+                        </div>
+                        <h3 class="card-title">Second block</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing eted</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="img/f5.png" alt="Third block">
+                        </div>
+                        <h3 class="card-title">Third block</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing etc?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form">
+            <div class="container">
+                <h2 class="form-title">Product Order Form</h2>
+                <form id="productOrderForm" class="form-content" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" class="input" required minlength="2" pattern="[A-Za-z\s]+" title="Please enter your first name (minimum 2 letters, Latin alphabet only)">
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="input" required minlength="2" pattern="[A-Za-z\s]+" title="Please enter your last name (minimum 2 letters, Latin alphabet only)">
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number (e.g. +7 (999) 123-45-67)" class="input" required pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" title="Please enter a valid Russian phone number (e.g. +7 (999) 123-45-67)">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="destination" name="destination" placeholder="Delivery Address" class="input" required minlength="10" title="Please enter a valid delivery address (minimum 10 characters)">
+                        <span class="error-message" id="destinationError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="datetime-local" id="orderDate" name="orderDate" class="input" required min="<?php echo date('Y-m-d\TH:i'); ?>" title="Please select a future date and time">
+                        <span class="error-message" id="dateError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" id="quantity" name="quantity" placeholder="Quantity" class="input" required min="1" max="100" title="Please enter a quantity between 1 and 100">
+                        <span class="error-message" id="quantityError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="paymentMethod" name="paymentMethod" class="input" required title="Please select a payment method">
+                            <option value="">Select payment method</option>
+                            <option value="cash">Cash on Delivery</option>
+                            <option value="card">Credit Card</option>
+                            <option value="online">Online Payment</option>
+                        </select>
+                        <span class="error-message" id="paymentError"></span>
+                    </div>
+
+                    <button type="submit" class="button submit-button">Submit Order</button>
+                </form>
+                <div id="orderSummary" class="summary"></div>
+
+                <div class="form-separator"></div>
+
+                <h2 class="form-title callback-title">Callback order form</h2>
+                <form class="form-content">
+                    <input type="text" placeholder="Name" class="input" required minlength="2" pattern="[A-Za-z\s]+">
+                    <input type="email" placeholder="Enter your E-mail" class="input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    <input type="tel" placeholder="Phone" class="input" required pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
+                    <input type="text" placeholder="What type are you interested in?" class="input" required minlength="5">
+                    <button type="submit" class="button submit-button">Submit a question!</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy;&nbsp;Everything on this site is protected</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
